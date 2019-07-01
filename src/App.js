@@ -27,18 +27,15 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
   }
 
+  deleteTodo(id) {
+    this.setState({ todos: this.state.todos.filter(todos => todos.id !== id)});
+  }
+
   toggleComplete(index) {
     const todos = this.state.todos.slice();
     const todo = todos[index];
     todo.isCompleted = todo.isCompleted ? false : true;
     this.setState({ todos: todos }); 
-  }
-
-  deleteTodo() {
-    this.setState()
-    this.state.todos.filter();
-    console.log('Shit worked!');
-    const delete = todos.filter()
   }
 
   render() {
@@ -53,6 +50,7 @@ class App extends Component {
           <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
           <input type="submit" />
         </form>
+        
       </div>
     );
   }
