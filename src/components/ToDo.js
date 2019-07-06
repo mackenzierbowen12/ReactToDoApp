@@ -10,10 +10,10 @@ const ToDo = props => {
             onChange={ props.toggleComplete }
           />
           <span>{ props.description }</span>
-          <button onClick={this.deleteTodo}>Delete</button>
+          <button onClick={props.deleteTodo}>Delete</button>
         </li>
       );
-  }
+}
 
 export default ToDo;
 
