@@ -28,9 +28,9 @@ class App extends Component {
   }
 
   deleteTodo(e) {
-    this.setState({todos: this.state.todos.filter(todos){
-       return todos !== e.target.value
-    })};
+    this.setState({todos: this.state.todos.filter(todos =>
+      todos !== e.target.value
+      )});
     //console.log('we did the thing!', e.target);
   }
 
@@ -52,10 +52,10 @@ class App extends Component {
                 description={todo.description}
                 isCompleted={todo.isCompleted}
                 toggleComplete={this.toggleComplete.bind(this, index)}
+                deleteTodo={this.deleteTodo.bind(this)}
               />
-              <ToDo deleteTodo={this.deleteTodo.bind(this)} />
             </div>
-          )}
+          )};
         </ul>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input
